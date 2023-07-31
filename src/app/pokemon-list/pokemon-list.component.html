@@ -1,5 +1,11 @@
+<mat-icon>search</mat-icon>
+<mat-form-field class="search-field">
+    <mat-label>カタカナで入力</mat-label>
+    <input matInput type="text" [(ngModel)]="searchText" #text>
+</mat-form-field>
+
 <div class="grid">
-    <mat-card *ngFor="let pokemon of pokemons" routerLink="/{{pokemon.id}}">
+    <mat-card *ngFor="let pokemon of pokemons| filter:searchText" routerLink="/{{pokemon.id}}">
         <img src="/assets/thumbnails/{{pokemon.id | number:'3.0'}}.png" alt=""/>
         <p>{{pokemon.name.japanese}}</p>
     </mat-card>

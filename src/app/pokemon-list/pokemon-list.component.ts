@@ -9,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
   pokemons = POKEMONS;
+  filteredPokemonList: any;
+  searchText: any;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  searchResult(seachText: string) {
+    this.filteredPokemonList = seachText;
+  }
 }
